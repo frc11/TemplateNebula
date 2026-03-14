@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6c4fff;
+  --accent-cyan: #00e5ff;
+  --accent-pink: #ff4daa;
+  --bg: #04060f;
+  --surface: rgba(255, 255, 255, 0.03);
+  --border: rgba(255, 255, 255, 0.08);
+  --text-main: #f8fafc;
+  --text-dim: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+@layer base {
+  h1, h2, h3 {
+    @apply font-display font-extrabold uppercase;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-7 py-3 rounded-full font-bold transition-all duration-300 transform font-body cursor-pointer border-none;
+  }
+  .btn-primary {
+    @apply bg-brand text-white shadow-[0_0_20px_rgba(108,79,255,0.3)] hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(108,79,255,0.5)];
+  }
+  .btn-secondary {
+    @apply bg-white/5 text-white border border-white/10 backdrop-blur-md hover:bg-white/10 hover:border-white/20;
+  }
+}
+
+.grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-animation {
+  animation: ticker 18s linear infinite;
+}
