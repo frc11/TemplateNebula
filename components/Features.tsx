@@ -17,7 +17,7 @@ const FeatureCard = ({ icon, title, description, delay = 0 }: FeatureCardProps):
         <div 
             ref={ref}
             className={clsx(
-                "bg-white/5 border border-white/10 p-10 rounded-[32px] transition-all duration-700 hover:border-brand hover:bg-brand/5 group cursor-default",
+                "bg-white/5 border border-white/10 p-6 md:p-10 rounded-[32px] transition-all duration-700 hover:border-brand hover:bg-brand/5 group cursor-default",
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             )}
             style={{ transitionDelay: `${delay}ms` }}
@@ -37,7 +37,7 @@ export default function Features(): React.JSX.Element {
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
           <span className="text-brand text-sm font-bold uppercase tracking-widest mb-4 block">Capacidades</span>
-          <h2 className="text-4xl md:text-7xl mb-4">Todo lo que necesitás.</h2>
+          <h2 className="text-3xl md:text-7xl mb-4">Todo lo que necesitás.</h2>
           <p className="text-text-dim text-lg">Herramientas pensadas para equipos que no tienen tiempo que perder.</p>
         </div>
 

@@ -38,7 +38,7 @@ export default function Team(): React.JSX.Element {
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
           <span className="text-brand text-sm font-bold uppercase tracking-widest mb-4 block">El equipo</span>
-          <h2 className="text-4xl md:text-7xl mb-4">Hecho en Tucumán.</h2>
+          <h2 className="text-3xl md:text-7xl mb-4">Hecho en Tucumán.</h2>
           <p className="text-text-dim text-lg mt-6 max-w-2xl mx-auto">Somos un equipo tucumano construyendo tecnología de clase mundial desde el NOA.</p>
         </div>
 

@@ -29,12 +29,12 @@ export default function DashboardPreview(): React.JSX.Element {
     >
       <div className="mb-20">
         <span className="text-brand text-sm font-bold uppercase tracking-widest mb-4 block underline decoration-brand/30 underline-offset-8">Dashboard</span>
-        <h2 className="text-4xl md:text-7xl mb-4">Todo en tiempo real.</h2>
+        <h2 className="text-3xl md:text-7xl mb-4">Todo en tiempo real.</h2>
         <p className="text-text-dim text-lg">Monitoreá el rendimiento con precisión milimétrica.</p>
       </div>
 
-      <div className="relative w-full max-w-5xl bg-gradient-to-br from-white/5 to-white/[0.01] border border-white/10 rounded-[32px] p-10 md:p-16 backdrop-blur-3xl overflow-hidden text-left grid md:grid-cols-2 gap-8">
-        <div className="bg-black/40 border border-white/5 rounded-2xl p-8">
+      <div className="relative w-full max-w-5xl bg-gradient-to-br from-white/5 to-white/[0.01] border border-white/10 rounded-[32px] p-6 md:p-16 backdrop-blur-3xl overflow-hidden text-left grid md:grid-cols-2 gap-8">
+        <div className="bg-black/40 border border-white/5 rounded-2xl p-6 md:p-8">
           <div className="text-text-dim text-sm mb-2">Carga CPU</div>
           <div className="text-4xl font-display font-black text-white mb-6 uppercase tracking-tighter">{cpu}%</div>
           <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
@@ -47,7 +47,9 @@ export default function DashboardPreview(): React.JSX.Element {
 
         <div className="bg-black/40 border border-white/5 rounded-2xl p-8">
           <div className="text-text-dim text-sm mb-2">Usuarios activos</div>
-          <div className="text-4xl font-display font-black text-white uppercase tracking-tighter">{users.toLocaleString()}</div>
+          <div className="text-4xl font-display font-black text-white uppercase tracking-tighter" suppressHydrationWarning>
+            {users.toLocaleString()}
+          </div>
         </div>
 
         <div className="md:col-span-1 bg-black/40 border border-white/5 rounded-2xl p-8">

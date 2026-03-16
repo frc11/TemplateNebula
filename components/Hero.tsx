@@ -1,11 +1,15 @@
 import React from 'react';
 import { HERO_STATS } from '../lib/data';
 
-export default function Hero(): React.JSX.Element {
+interface HeroProps {
+  onContactClick: () => void;
+}
+
+export default function Hero({ onContactClick }: HeroProps): React.JSX.Element {
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-[5%] pt-32 pb-20 overflow-hidden">
       {/* Decorative Orb */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] height-[600px] z-0 blur-[60px] opacity-40 pointer-events-none">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[600px] md:h-[600px] z-0 blur-[60px] opacity-40 pointer-events-none">
         <div className="w-full h-full rounded-full bg-brand animate-float" />
       </div>
 
@@ -14,7 +18,7 @@ export default function Hero(): React.JSX.Element {
           v2.0 · Tucumán para el mundo 🌊
         </span>
 
-        <h1 className="text-5xl md:text-8xl lg:text-9xl leading-[0.9] mb-6 max-w-[1000px]">
+        <h1 className="text-4xl md:text-8xl lg:text-9xl leading-[0.9] mb-6 max-w-[1000px] break-words">
           Escalá tu app <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-accent italic">
             al infinito.
@@ -27,8 +31,8 @@ export default function Hero(): React.JSX.Element {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 mb-20">
-          <a href="#pricing" className="btn btn-primary px-10">Empezar a construir</a>
-          <a href="#" className="btn btn-secondary px-10">Leer la docs</a>
+          <button onClick={onContactClick} className="btn btn-primary px-10">Empezar a construir</button>
+          <a href="https://docs.yaku.dev" target="_blank" rel="noopener noreferrer" className="btn btn-secondary px-10">Leer la docs</a>
         </div>
 
         <div className="flex flex-wrap justify-center gap-10 md:gap-16">

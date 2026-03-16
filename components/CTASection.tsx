@@ -39,7 +39,7 @@ export default function CTASection({ onSubscribeSuccess }: CTASectionProps): Rea
         <div className="absolute top-0 left-0 w-full h-full bg-brand/5 opacity-50" />
         
         <div className="relative z-10">
-          <h2 className="text-4xl md:text-6xl mb-6">¿Listo para el infinito?</h2>
+          <h2 className="text-3xl md:text-6xl mb-6">¿Listo para el infinito?</h2>
           <p className="text-text-dim text-lg mb-12 max-w-xl mx-auto">
             Unite a la próxima generación de startups que están escalando con YAKU.
           </p>

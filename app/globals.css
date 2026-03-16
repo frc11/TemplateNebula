@@ -18,10 +18,12 @@
   -webkit-font-smoothing: antialiased;
 }
 
-body {
+html, body {
   background-color: var(--bg);
   color: var(--text-main);
   overflow-x: hidden;
+  position: relative;
+  width: 100%;
 }
 
 @layer base {

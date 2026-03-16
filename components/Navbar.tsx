@@ -10,7 +10,12 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export default function Navbar(): React.JSX.Element {
+interface NavbarProps {
+  onLoginClick: () => void;
+  onContactClick: () => void;
+}
+
+export default function Navbar({ onLoginClick, onContactClick }: NavbarProps): React.JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -25,7 +30,7 @@ export default function Navbar(): React.JSX.Element {
   return (
     <nav className={cn(
       "fixed top-0 left-0 w-full z-[1000] transition-all duration-300 px-[5%] py-6",
-      isScrolled && "bg-bg/80 backdrop-blur-xl border-bottom border-white/10 py-4"
+      isScrolled && "bg-bg/80 backdrop-blur-xl border-b border-white/10 py-4"
     )}>
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <a href="#" className="font-display text-2xl font-extrabold tracking-tighter text-white">
@@ -47,8 +52,18 @@ export default function Navbar(): React.JSX.Element {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex gap-4 items-center">
-          <a href="#" className="btn btn-secondary py-2 px-6 text-sm">Iniciar sesión</a>
-          <a href="#" className="btn btn-primary py-2 px-6 text-sm">Empezar gratis</a>
+          <button 
+            onClick={onLoginClick}
+            className="btn btn-secondary py-2 px-6 text-sm"
+          >
+            Iniciar sesión
+          </button>
+          <button 
+            onClick={onContactClick}
+            className="btn btn-primary py-2 px-6 text-sm"
+          >
+            Empezar gratis
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -74,8 +89,18 @@ export default function Navbar(): React.JSX.Element {
             </a>
           ))}
           <div className="flex flex-col gap-4 mt-4">
-            <a href="#" className="btn btn-secondary w-full">Iniciar sesión</a>
-            <a href="#" className="btn btn-primary w-full">Empezar gratis</a>
+            <button 
+              onClick={() => { onLoginClick(); setIsOpen(false); }}
+              className="btn btn-secondary w-full"
+            >
+              Iniciar sesión
+            </button>
+            <button 
+              onClick={() => { onContactClick(); setIsOpen(false); }}
+              className="btn btn-primary w-full"
+            >
+              Empezar gratis
+            </button>
           </div>
         </div>
       )}
